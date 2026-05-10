@@ -1,5 +1,3 @@
-from unittest import result
-
 import responses
 
 from superhero_api.superheroes import (
