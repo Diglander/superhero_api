@@ -85,7 +85,7 @@ def test_filter_male_with_work():
     assert result[0]["name"] == "Superman"
 
 
-def test_filter_unknown_withoout_work():
+def test_filter_unknown_without_work():
     result = filter_gender_work(fake_heroes, Gender.UNKNOWN, 0)
     assert len(result) == 1
     assert result[0]["name"] == "Godzilla"
