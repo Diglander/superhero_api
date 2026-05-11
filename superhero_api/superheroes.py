@@ -56,7 +56,7 @@ def height_from_hero(hero: dict) -> float:
         # Если нет ключа 'appearance', или список пустой, или там None
         return 0.0
     if hero_height == "-" or not isinstance(hero_height, str):
-        return 0
+        return 0.0
     if hero_height.endswith(" cm"):
         height = float(hero_height.replace(" cm", ""))
     elif hero_height.endswith(" meters"):
@@ -66,7 +66,7 @@ def height_from_hero(hero: dict) -> float:
             """Не удалось получить рост героя.\n"""
             f""" id: {hero.get('id', '?')} \n height = {hero_height}"""
         )
-        return 0
+        return 0.0
     return height
 
 
