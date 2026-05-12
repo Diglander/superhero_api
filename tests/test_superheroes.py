@@ -49,7 +49,7 @@ fake_heroes = [
 """
 Сначала проводим юнит-тесты по основным функциям,
 после чего интеграционные тесты, чему нам поможет
-мокирование response и combined_hero_function 
+мокирование responses и combined_hero_function 
 """
 
 # Тесты функции height_from_hero
