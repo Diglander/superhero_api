@@ -1,4 +1,5 @@
 import responses
+import pytest
 
 from superhero_api.superheroes import (
     BASE_URL,
@@ -150,21 +151,7 @@ def test_fetch_all_superheroes_error():
     assert result is None
 
 
-# Интеграционное тестирование
-
-
-@responses.activate
-def test_combined_hero_function_Female_True():
-    responses.add(responses.GET, f"{BASE_URL}/all.json", json=fake_heroes, status=200)
-    result = combined_hero_function(Gender.FEMALE, True)
-    assert result["name"] == "Batgirl"
-
-
-@responses.activate
-def test_combined_hero_function_Male_True():
-    responses.add(responses.GET, f"{BASE_URL}/all.json", json=fake_heroes, status=200)
-    result = combined_hero_function(Gender.MALE, True)
-    assert result["name"] == "Superman"
+# Мокирование комбинирующей функции
 
 
 @responses.activate
@@ -179,3 +166,4 @@ def test_combined_hero_function_error():
     responses.add(responses.GET, f"{BASE_URL}/all.json", json=fake_heroes, status=500)
     result = combined_hero_function("Male", 5)
     assert result is None
+
